@@ -37,6 +37,41 @@ def bear_room():
             gold_room()
         else:
             print 'Unsure what you mean'
-            
+    return 0
+
+def cthulhu_room():
+    print 'Here, you encounter the worst in you'
+    print 'It makes you insane'
+    print 'Do you fight or flee?'
     
+    next = raw_input('>')
+    
+    if 'flee' in next:
+        start()
+    elif 'fight' in next:
+        dead('bad choice')
+    else:
+        cthulhu_room()
+    return 0
+
+def dead(reason):
+    print reason, 'Great!'
+    exit(0)
+    
+def start():
+    print 'You\'re in a dark room'
+    print 'There is a door to your right and left'
+    print 'Which one do you open?'
+    
+    next = raw_input('>')
+    
+    if next == 'left':
+        bear_room()
+    elif next == 'right':
+        cthulhu_room()
+    else:
+        dead('You\'ll starve to death')
+    exit(0)
+    
+start()
             
