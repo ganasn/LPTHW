@@ -24,36 +24,46 @@ def convert(snippet, phrase):
     results = []
     param_names = []
     
+#    print 'snippet.count(\'@@@\') is %d\n' % snippet.count('@@@')
+    
     for i in range(0, snippet.count('@@@')):
+        print 'temp variable i is %d\n' % i
         param_count = random.randint(1,3)
         param_names.append(','.join(random.sample(WORDS, param_count)))
 
-    print 'snippet from convert is %s\n' % snippet
-    print 'phrase from convert is %s\n' % phrase
+        
+#    print 'class_names is: %r\n' % class_names
+#    print 'other_names is: %r\n' % other_names
+#    print 'param_names is: %r\n' % param_names
+#        
+#        
+#    print 'snippet from convert is %s\n' % snippet
+#    print 'phrase from convert is %s\n' % phrase
+    
     for sentence in snippet,phrase: 
-        print 'sentence is %s\n' % sentence
+#        print 'sentence is %s\n' % sentence
         result = sentence[:]
         
-    print 'result immediately after instantiating is %r\n' % result
-    
-    for word in class_names:
-        result = result.replace('%%%',word,1)
-        
-    print 'result after class_names replacements is %r\n' % result
+#        print 'result immediately after instantiating is %r\n' % result
 
-    for word in other_names:
-        result = result.replace('***',word,1)
-        
-    print 'result after other_names replacements is %r\n' % result
-    
-    for word in param_names:
-        result = result.replace('@@@',word,1)
-        
-    print 'result after param_names replacements is %r\n' % result
-        
-    results.append(result)
-    
-    print 'result\'s\' after appending from \'result\' is %r\n' % results
+        for word in class_names:
+            result = result.replace('%%%',word,1)
+
+#        print 'result after class_names replacements is %r\n' % result
+
+        for word in other_names:
+            result = result.replace('***',word,1)
+
+#        print 'result after other_names replacements is %r\n' % result
+
+        for word in param_names:
+            result = result.replace('@@@',word,1)
+
+#        print 'result after param_names replacements is %r\n' % result
+
+        results.append(result)
+
+#        print 'result\'s\' after appending from \'result\' is %r\n' % results
     
     return results
 
@@ -72,12 +82,13 @@ try:
         
         for snippet in snippets:
             phrase = PHRASES[snippet]
-            print 'snippet is:%s\n' % snippet
-            print 'phrase is:%s\n' % phrase
+#            print 'snippet is:%s\n' % snippet
+#            print 'phrase is:%s\n' % phrase
 #            question = convert(snippet,phrase)
 #Code breaks in this next line given that convert(x,y) returns only 1 value
             question,answer = convert(snippet,phrase)
-            print 'question is %s\n:' % question
+#            print 'question is %r\n:' % question
+#            print 'answer is %r\n' % answer
 #            exit(0)
             if PHRASE_FIRST:
                 question, answer = answer, question
