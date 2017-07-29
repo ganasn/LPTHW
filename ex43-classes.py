@@ -12,7 +12,12 @@ class Engine(object):
         pass
     
     def play(self):
-        pass
+        current_scene = self.scene_map.opening_scene()
+        
+        while True:
+            next_scene_name = current_scene.enter()
+            current_scene = self.scene_map.next_scene(next_scene_name)
+#        pass
     
 #one of two exit points of the game
 class Death(object):
