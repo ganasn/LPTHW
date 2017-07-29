@@ -1,9 +1,12 @@
 #Exercise 43 - Classes
+#This is a skeleton set of classes
 
+#This will be inherited 
 class Scene(object):
     def enter(self):
         pass
-    
+
+#Actual controller of the game
 class Engine(object):
     def __init__(self, scene_map):
         pass
@@ -11,22 +14,31 @@ class Engine(object):
     def play(self):
         pass
     
+#one of two exit points of the game
 class Death(object):
     def enter(self):
+        print 'in Death.enter()'
         pass
     
+#game's starting point - scene 1
 class CentralCorridor(Scene):
     def enter(self):
+        print 'in CentralCorridor.enter()'
         pass
     
+#one of the scenes on happy path - scene #3
 class LaserWeaponArmory(Scene):
     def enter(self):
+        print 'in LaserWeaponArmory.self()'
         pass
-    
+
+#scene 2 on happy path
 class TheBridge(Scene):
     def enter(self):
+        print 'in TheBridge.self()'
         pass
     
+#scene 4 on happy path - another exit point for the game
 class EscapePod(Scene):
     def enter(self):
         pass
